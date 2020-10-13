@@ -8,13 +8,15 @@ package com.sampurna.javabootcamp;
 public class Factorial {
 
 	public static void main(String[] args) {
-		Integer number = 6;
+		Integer number = 4;
 		Integer factorial = getFactorial(number);
 		System.out.println(factorial);
 
 	}
 
-	private static Integer getFactorial(Integer number) {
+	public
+	static Integer getFactorial(Integer number) {
+		
 		if (number == 1) {
 			return 1;
 		}

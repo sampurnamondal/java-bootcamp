@@ -10,16 +10,37 @@ package com.sampurna.javabootcamp;
 public class ArmstrongNumber {
 
 	public static void main(String[] args) {
-		Integer numGiven = 153;
-		Integer endValue = 0;
-		char[] numInString = numGiven.toString().toCharArray();
-		for (Character c : numInString) {
-			Integer temp = Integer.parseInt(c.toString());
-			endValue += temp * temp * temp;
+		Integer givenNumber = 153;
+		Boolean isArmstrongNumber = isArmstrongNumber(givenNumber);
+
+		if (isArmstrongNumber) {
+			System.out.println(givenNumber + " " + "is an Armstrong number.");
+		} else {
+			System.out.println(givenNumber + " " + "is not an Armstrong number.");
 		}
-		if (endValue.equals(numGiven)) {
-			System.out.println(numGiven + " is an ArmStrong number.");
+
+	}
+
+	public static Boolean isArmstrongNumber(Integer givenNumber) {
+
+		Boolean isArmstrongNumber = false;
+		Integer endValue = 0, number = givenNumber;
+
+		if (number == null || number < 0) {
+			return false;
 		}
+
+		//calculating if given number is an Armstrong number
+		while (number > 0) {
+			endValue += (number % 10) * (number % 10) * (number % 10);
+			number = number / 10;
+		}
+
+		if (endValue.equals(givenNumber)) {
+			isArmstrongNumber = true;
+		}
+
+		return isArmstrongNumber;
 
 	}
 
